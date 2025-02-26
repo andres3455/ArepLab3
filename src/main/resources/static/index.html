@@ -34,28 +34,6 @@
             </div>
         </section>
 
-        <section class="shutdown">
-            <h2>⚠️ Apagar Servidor</h2>
-            <button id="shutdown">🛑 Apagar Servidor</button>
-            <p id="shutdownMessage" style="display: none; color: red; font-weight: bold;">
-                🔴 Servidor apagado. Debe reiniciar manualmente.
-            </p>
-        </section>
-
-        <script>
-            document.getElementById("shutdown").addEventListener("click", function() {
-                fetch("/shutdown")
-                    .then(response => {
-                        if (response.ok) {
-                            document.getElementById("shutdownMessage").style.display = "block";
-                        } else {
-                            alert("Error: No se pudo apagar el servidor.");
-                        }
-                    })
-                    .catch(error => console.error("Error al apagar el servidor:", error));
-            });
-        </script>
-
         <footer>
             <p>&copy; 2025 Servidor HTTP Simple. Todos los derechos reservados.</p>
         </footer>
